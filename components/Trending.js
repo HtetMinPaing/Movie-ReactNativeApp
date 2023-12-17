@@ -9,7 +9,7 @@ export default function Trending ({data}) {
 
     const navigation = useNavigation();
     
-    const handleClick= () => {
+    const handleClick= (item) => {
         navigation.navigate('Movie',item)
     }
     return (
@@ -30,7 +30,7 @@ export default function Trending ({data}) {
 
 const MovieCard = ({item, handleClick}) => {
     return(
-        <TouchableOpacity onPress={handleClick}>
+        <TouchableOpacity onPress={() => handleClick(item)}>
             <Image
                 source={require('../assets/images/moviePoster1.png')}
                 style={{
